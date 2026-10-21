@@ -1,0 +1,238 @@
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #a4c8e1 url('assets/fundo.png') no-repeat center center / cover;
+  padding: 24px 16px;
+}
+
+/* Moldura Central Translúcida */
+.main-card {
+  width: 100%;
+  max-width: 680px;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 20px;
+  padding: 36px 32px 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Topo / Perfil */
+.profile-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.avatar-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  overflow: hidden;
+  margin: 0 auto 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+/* Controle de Abas */
+.tab-content {
+  display: none;
+  width: 100%;
+}
+
+.tab-content.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botão de Retorno */
+.btn-voltar {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #222222;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 14px;
+  padding: 4px 0;
+  text-decoration: underline;
+}
+
+/* Aba Início: Botões Roxos */
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 360px;
+  margin: 10px 0 20px;
+}
+
+.nav-btn {
+  background: #9aa5e2;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1b1e38;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-btn:hover {
+  background: #8b97d8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn-link {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+/* Aba Projetos: Grid de Cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 115px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-link {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #111111;
+  text-decoration: none;
+}
+
+.card-link:hover:not(.disabled) {
+  text-decoration: underline;
+}
+
+.card-link.disabled {
+  color: #444444;
+  text-decoration: underline;
+  cursor: default;
+}
+
+/* Aba Sobre Mim */
+.about-box {
+  width: 100%;
+  max-width: 520px;
+  margin: 12px 0 20px;
+  text-align: center;
+}
+
+.about-box p {
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Rodapé: Ícones Sociais */
+.social-links {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  opacity: 0.85;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-icon:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Celular */
+@media (max-width: 600px) {
+  .main-card {
+    padding: 24px 16px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

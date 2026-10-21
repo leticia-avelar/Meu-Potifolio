@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | Leticia Avelar Araujo</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Card Central Translúcido -->
+  <main class="main-card">
+    
+    <!-- Topo: Foto e Apresentação Fixa -->
+    <header class="profile-header">
+      <div class="avatar-container">
+        <img src="assets/perfil.jpg" alt="Foto de perfil de Leticia Avelar Araujo" class="avatar">
+      </div>
+      <h1 class="name">Leticia Avelar Araujo</h1>
+      <p class="role">Desenvolvedor Front-end no Programa Trilhas</p>
+    </header>
+
+    <!-- ABA 1: TELA DE INÍCIO COM OS 3 BOTÕES -->
+    <section id="aba-inicio" class="tab-content active">
+      <div class="nav-buttons">
+        <button class="nav-btn" onclick="abrirAba('aba-sobre')">Sobre mim</button>
+        <button class="nav-btn" onclick="abrirAba('aba-projetos')">Veja meus projetos</button>
+        <a href="https://drive.google.com/drive/folders/1OsLQrTlMhusGiK88kY2VloFch9n6Pfv4" target="_blank" rel="noopener noreferrer" class="nav-btn nav-btn-link">Acesse os meus certificados</a>
+      </div>
+    </section>
+
+    <!-- ABA 2: TELA DE PROJETOS -->
+    <section id="aba-projetos" class="tab-content">
+      <button class="btn-voltar" onclick="abrirAba('aba-inicio')">&larr; Voltar ao início</button>
+
+      <div class="projects-grid">
+        <!-- Card 1: Projeto Real (Lista de Jogos Retrô) -->
+        <article class="card">
+          <div class="card-image-wrapper">
+            <img src="assets/projeto1.png" alt="Prévia do projeto Jogos Retrô" class="card-img">
+          </div>
+          <a href="https://leticia-avelar.github.io/lista-jogos-retro/" target="_blank" class="card-link">Acessar projeto &rarr;</a>
+        </article>
+
+        <!-- Card 2: Em andamento -->
+        <article class="card">
+          <div class="card-image-wrapper">
+            <img src="assets/engrenagem.webp" alt="Projeto em andamento" class="card-img">
+          </div>
+          <span class="card-link disabled">Projeto em andamento</span>
+        </article>
+
+        <!-- Card 3: Em andamento -->
+        <article class="card">
+          <div class="card-image-wrapper">
+            <img src="assets/engrenagem.webp" alt="Projeto em andamento" class="card-img">
+          </div>
+          <span class="card-link disabled">Projeto em andamento</span>
+        </article>
+
+        <!-- Card 4: Em andamento -->
+        <article class="card">
+          <div class="card-image-wrapper">
+            <img src="assets/engrenagem.webp" alt="Projeto em andamento" class="card-img">
+          </div>
+          <span class="card-link disabled">Projeto em andamento</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABA 3: TELA SOBRE MIM -->
+    <section id="aba-sobre" class="tab-content">
+      <button class="btn-voltar" onclick="abrirAba('aba-inicio')">&larr; Voltar ao início</button>
+      <div class="about-box">
+        <p>Sou estudante de programação apaixonada por front-end e por dar vida a designs utilizando o Figma com HTML e CSS. Movida pela curiosidade de aprender todos os dias, busco transformar boas ideias em telas interativas, funcionais e que façam sentido para quem usa.</p>
+      </div>
+    </section>
+
+    <!-- Rodapé: Redes Sociais -->
+    <footer class="social-links">
+      <a href="https://github.com/leticia-avelar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <img src="assets/github.png" alt="GitHub" class="social-icon">
+      </a>
+      <a href="https://www.linkedin.com/in/leticia-avelar-araujo-64a66a337/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <img src="assets/linkedin.png" alt="LinkedIn" class="social-icon">
+      </a>
+    </footer>
+
+  </main>
+
+  <!-- Script que alterna as abas ao clicar -->
+  <script>
+    function abrirAba(idAba) {
+      document.querySelectorAll('.tab-content').forEach(aba => {
+        aba.classList.remove('active');
+      });
+      document.getElementById(idAba).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
